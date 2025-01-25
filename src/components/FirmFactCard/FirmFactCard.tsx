@@ -3,11 +3,11 @@ import styles from './FirmFactCard.module.scss';
 import Button from '../Button/Button';
 
 interface FirmFactCardProps {
-  variant: 'default' | 'border';
+  variant: 'default' | 'icon';
   state?: 'initial' | 'hover' | 'disabled';
   content: string;
   className?: string;
-  isSpecialCard7?: boolean;
+  topAligned?: boolean; 
 }
 
 const FirmFactCard: React.FC<FirmFactCardProps> = ({
@@ -15,7 +15,7 @@ const FirmFactCard: React.FC<FirmFactCardProps> = ({
   state = 'initial',
   content,
   className,
-  isSpecialCard7
+  topAligned,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -26,17 +26,12 @@ const FirmFactCard: React.FC<FirmFactCardProps> = ({
     setIsHovered(false);
   }
 
-  const cardClasses = [
-    styles.card,
-    styles[variant],
-    styles[state],
-    className
-  ].join(' ');
+  const cardClasses = `${styles.card} ${className || ''} ${
+    topAligned ? styles.topAligned : ''
+  } ${state === 'disabled' ? styles.disabled : ''}`;
 
   const isButtonOverrideActive =
-    state !== 'disabled' &&
-    isHovered &&
-    (variant === 'default' || isSpecialCard7 === true);
+    state !== 'disabled' && isHovered 
 
   return (
     <div
@@ -45,7 +40,7 @@ const FirmFactCard: React.FC<FirmFactCardProps> = ({
       onMouseLeave={handleMouseLeave}
     >
       <Button
-        variant="icon"
+        variant={variant}
         state={state === 'disabled' ? 'disabled' : 'initial'}
         label={content}
         isCardHovered={isButtonOverrideActive}

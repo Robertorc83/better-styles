@@ -11,7 +11,7 @@ const FirmFacts: React.FC = () => {
       <div className={styles.grid}>
         <div className={`${styles.cell1} ${styles.bigWhite}`}>
           <FirmFactCard
-            variant="default"
+            variant="icon"
             state="initial"
             content="This is a two line button that terminates with..."
           />
@@ -19,7 +19,7 @@ const FirmFacts: React.FC = () => {
 
         <div className={styles.cell2}>
           <FirmFactCard
-            variant="default"
+            variant="icon"
             state="initial"
             content="This is a two line button that terminates with..."
           />
@@ -35,7 +35,7 @@ const FirmFacts: React.FC = () => {
 
         <div className={styles.cell4}>
           <FirmFactCard
-            variant="default"
+            variant="icon"
             state="initial"
             content="This is a two line button that terminates with..."
           />
@@ -43,28 +43,30 @@ const FirmFacts: React.FC = () => {
 
         <div className={styles.cell5}>
           <FirmFactCard
-            variant="default"
+            variant="icon"
             state="initial"
-            content="This is a two line button that terminates with..."
+            content="This is a two line buttonthat terminates with..."
+            topAligned
           />
         </div>
 
         <div className={styles.cell6}>
           <FirmFactCard
-            variant="border"
+            variant="icon"
             state="disabled"
             content="This is a two line button that terminates with..."
+            topAligned
           />
         </div>
 
         <div className={styles.cell7}>
-         <FirmFactCard
-            variant="border"
+          <FirmFactCard
+            variant="icon"
             state="initial"
-            content="This is a two line button..."
+            content="This is a two line button that terminates with..."
             className={styles.specialCard7}
-            isSpecialCard7={true}
-         />
+            topAligned
+          />
         </div>
       </div>
     </div>

@@ -18,7 +18,6 @@ const Button: React.FC<ButtonProps> = ({
   const classList = [styles.button, styles[variant]];
   if (state === 'disabled') classList.push(styles.disabled);
 
-  // If the card is hovered, apply a special override class
   if (isCardHovered) {
     classList.push(styles.cardHoverOverride);
   }

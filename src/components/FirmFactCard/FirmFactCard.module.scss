@@ -1,49 +1,50 @@
 .card {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    text-align: center;
-    box-sizing: border-box;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  
-    &.disabled {
-      opacity: 0.5;
-      pointer-events: none;
-    }
-  
-    /* Default variant: entire card becomes green on hover */
-    &.default {
-      &:hover:not(.disabled) {
-        background-color: #07c06a;
-  
-        /* Override button's own hover logic */
-        .button,
-        .button:hover {
-          background-color: #07c06a !important;
-          color: #ffffff !important;
-          border: 2px solid transparent;
-        }
-      }
-    }
-  
-    /* Border variant: only border changes to green on hover */
-    &.border {
-      &:hover:not(.disabled) {
-        border-color: #07c06a;
-      }
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &.disabled {
+    background-color: #ffffff;
+    opacity: 1;
+    pointer-events: none;
+
+    .button {
+      background-color: #aaaaaa;
+      color: #ffffff;
+      cursor: not-allowed;
+      opacity: 0.8;
     }
   }
-  
-  /* Optional label for debugging states */
-  .stateLabel {
-    margin-top: 8px;
-    font-size: 13px;
-    color: #333;
+
+  &:hover:not(.disabled) {
+    background-color: #07c06a;
+
+    .button {
+      background-color: #07c06a !important;
+      color: #ffffff !important;
+    }
   }
-  
+
+  div[class*="cell7"] &:hover:not(.disabled) {
+    background-color: #fff !important;
+    border-color: #07c06a;
+
+    .button {
+      background-color: #07c06a !important;
+      color: #ffffff !important;
+    }
+  }
+}
+
+.topAligned {
+  justify-content: flex-start !important;
+  padding-top: 50px;
+}

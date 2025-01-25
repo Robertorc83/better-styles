@@ -1,5 +1,5 @@
 import FirmFacts from './components/FirmFacts/FirmFacts';
-import './App.scss'; // Optional global SCSS if needed
+import './App.scss';
 
 function App() {
   return (
